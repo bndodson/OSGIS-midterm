@@ -1,6 +1,6 @@
 var mapOpts = {
-    center: [0, 0],
-    zoom: 2
+    center: [39.9523092490126, -75.19320297314758],
+    zoom: 14
 };
 
 var map = L.map('map', mapOpts);
@@ -19,20 +19,20 @@ var data;
 var markers
 
 var page1 = {
-    title: "page1",
-    content: "This is the content for page 1.",
+    title: "Center City",
+    content: "The locations of active COVID-19 testing sites in Center City Philadelphia",
     bbox: [
-        [34.813803317113155, -14.150390625],
-        [59.44507509904714, 30.3662109375]
+        [39.945016, -75.181375],
+        [39.958405, -75.141850]
     ]
 }
 
 var page2 = {
-    title: "page2",
-    content: "This is the content for page 2.",
+    title: "West Philly",
+    content: "The locations of active COVID-19 testing sites in West Philadelphia",
     bbox: [
-        [-45.76752296214988, 105.205078125],
-        [-2.0210651187669897, 160.3125]
+        [39.931262, -75.254631],
+        [39.983829, -75.181417]
     ]
 }
 
@@ -58,10 +58,9 @@ var prevPage = function() {
 }
 
 var buildPage = function(pageDefinition) {
-    markers = data.map(function(capital) {
-        return L.marker([capital.CapitalLatitude, capital.CapitalLongitude])
+    markers = data.map(function(e) {
+        return L.marker([e.geometry.coordinates[1], e.geometry.coordinates[0]]).addTo(map)
     })
-    markers.forEach(function(marker) { marker.addTo(map) })
 
     $('#title').text(pageDefinition.title)
     $('#content').text(pageDefinition.content)
@@ -83,14 +82,8 @@ var tearDown = function() {
     markers.forEach(function(marker) { map.removeLayer(marker) })
 }
 
-$.ajax('https://raw.githubusercontent.com/CPLN692-MUSA611-Open-Source-GIS/datasets/master/json/world-country-capitals.json').done(function(json) {
-    var parsed = JSON.parse(json)
-    data = parsed.map(function(datum) {
-        datum.CapitalLatitude = Number(datum.CapitalLatitude)
-        datum.CapitalLongitude = Number(datum.CapitalLongitude)
-        return datum
-    })
-
+$.ajax('https://opendata.arcgis.com/datasets/398ec6ac0b7443babcdd41b40bab3407_0.geojson').done(function(json) {
+    data = json.features
     buildPage(slides[currentPage])
 })
 
