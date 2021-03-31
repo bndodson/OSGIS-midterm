@@ -19,26 +19,59 @@ var data;
 var markers
 
 var page1 = {
-    title: "Center City",
-    content: "The locations of active COVID-19 testing sites in Center City Philadelphia",
+    title: "Philadelphia's COVID-19 Testing Site Network",
+    content: "In partnership with the Philadelphia Department of Public Health, COVID-19 tests are available throughout the Philadelphia metro area.",
     bbox: [
-        [39.945016, -75.181375],
-        [39.958405, -75.141850]
+        [40.081224, -74.833031],
+        [39.834641, -75.486374]
     ]
 }
 
 var page2 = {
+    // color markers by drive_thruwalk_up (dt, wu, both)
+    title: "Types of Testing Sites",
+    content: "There are 3 types of testing sites: (1) Drive-Thru only, (2) Walk-Up only, and (3) Both Drive-Thru and Walk-Up to serve all members in the community.",
+    bbox: [
+        [40.081224, -74.833031],
+        [39.834641, -75.486374]
+    ]
+}
+
+var page3 = {
     title: "West Philly",
-    content: "The locations of active COVID-19 testing sites in West Philadelphia",
+    content: "The city continues to struggle providing testing sites accessible to all residents in the West Philly area. There are far fewer sites in this area than other parts of the city.",
     bbox: [
         [39.931262, -75.254631],
         [39.983829, -75.181417]
     ]
 }
 
+var page4 = {
+    // color markers by facility_type (clinic, fieldSite, hospital, phmcHC, cityHC, urgentCare, drugstore)
+    title: "Facility Types",
+    content: "Testing sites are available at a wide variety of facilities including hospitals, urgent cares, clinics, and the city's health centers. Some private pharmacies also offer COVID-19 testing.",
+    bbox: [
+        [40.081224, -74.833031],
+        [39.834641, -75.486374]
+    ]
+}
+
+var page5 = {
+    // filter to show sites where saturday and sunday columns are not blank
+    title: "Weekend Testing",
+    content: "Testing at select locations is available on the weekends to accomidate more schedules and make testing convenient.",
+    bbox: [
+        [40.081224, -74.833031],
+        [39.834641, -75.486374]
+    ]
+}
+
 var slides = [
     page1,
-    page2
+    page2,
+    page3,
+    page4,
+    page5
 ]
 
 var currentPage = 0
