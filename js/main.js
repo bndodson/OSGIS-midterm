@@ -18,6 +18,38 @@ var Stamen_TonerLite = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/ton
 var data;
 var markers
 
+var getTypeColor = function(site) {
+    if (site['drive_thruwalk_up'] === "dt") {
+        return "#1f78b4";
+    } else if (site['drive_thruwalk_up'] === "wu") {
+        return "#e31a1c";
+    } else if (site['drive_thruwalk_up'] === "both") {
+        return "#6a3d9a";
+    } else if (site['drive_thruwalk_up'] === null) {
+        return "#d9d9d9";
+    }
+}
+
+var getFacilityColor = function(site) {
+    if (site['facility_type'] === "clinic") {
+        return "#a6cee3";
+    } else if (site['facility_type'] === "fieldSite") {
+        return "#b2df8a";
+    } else if (site['facility_type'] === "hospital") {
+        return "#33a02c";
+    } else if (site['facility_type'] === "phmcHC") {
+        return "#fb9a99";
+    } else if (site['facility_type'] === "cityHC") {
+        return "#fdbf6f";
+    } else if (site['facility_type'] === "urgentCare") {
+        return "#ff7f00";
+    } else if (site['facility_type'] === "drugstore") {
+        return "#cab2d6";
+    } else if (site['facility_type'] === null) {
+        return "#d9d9d9";
+    }
+}
+
 var page1 = {
     title: "Philadelphia's COVID-19 Testing Site Network",
     content: "In partnership with the Philadelphia Department of Public Health, COVID-19 tests are available throughout the Philadelphia metro area.",
@@ -38,6 +70,7 @@ var page2 = {
 }
 
 var page3 = {
+    // filter zip for west philly (19131, 19151, 19139, 19104, 19143, 19142, 19153)
     title: "West Philly",
     content: "The city continues to struggle providing testing sites accessible to all residents in the West Philly area. There are far fewer sites in this area than other parts of the city.",
     bbox: [
