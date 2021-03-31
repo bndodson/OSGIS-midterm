@@ -1,7 +1,7 @@
-# Midterm: Bicycle Corridors in Philadelphia
+# Midterm: Philadelphia's COVID-19 Testing Network
 ###### Ben Dodson, CPLN 692 Open Source GIS, Spring 2021
-### Visualizing Philadelphia's Bicycle Corridors
-![biking in philly](https://cdn-5d792904f911c90950a587a6.closte.com/wp-content/uploads/2019/10/Biking-in-Philly-lq-sq.jpg "Source: Bicycle Coalition of Greater Philadelphia")
+### Visualizing COVID-19 Testing Sites in Philadelphia
+![biking in philly](https://www.inquirer.com/resizer/vTqkIb5BnK0yriD8VdVvDIelj_U=/1400x932/smart/cloudfront-us-east-1.images.arcpublishing.com/pmn/D62MGNYUGVGYPFFEG4UCRM6CJY.jpg "Source: TIM TAI / Staff Photographer / The Philadelphia Inquirer")
 
 
-Data Source: [Streets Department, City of Philadelphia](https://www.opendataphilly.org/dataset/bike-network)
+Data Source: [City of Philadelphia](https://www.opendataphilly.org/dataset/covid-19-test-sites)
