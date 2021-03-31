@@ -52,7 +52,7 @@ var getFacilityColor = function(site) {
 
 var page1 = {
     title: "Philadelphia's COVID-19 Testing Site Network",
-    content: "In partnership with the Philadelphia Department of Public Health, COVID-19 tests are available throughout the Philadelphia metro area.",
+    content: "In partnership with the Philadelphia Department of Public Health, COVID-19 tests are available throughout the Philadelphia metro area. This network of testing sites offers drive-thru and walk-up testing for those who live and/or work in Philadelphia. These sites have been established with public health partners, health care systems, and private partners. Sites are available 7 days a week throughout the metro area. Click Next to understand the availability of COVID-19 testing sites in the region.",
     bbox: [
         [40.081224, -74.833031],
         [39.834641, -75.486374]
