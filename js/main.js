@@ -142,6 +142,13 @@ var buildPage = function(pageDefinition) {
     } else {
         $('#next').prop("disabled", false)
     }
+
+    if (currentPage === 1) {
+        $('#legend').show()
+    } else { $('#legend').hide() }
+    if (currentPage === 3) {
+        $('#legend2').show()
+    } else { $('#legend2').hide() }
 }
 
 var tearDown = function() {
